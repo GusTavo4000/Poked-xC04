@@ -4,7 +4,8 @@ using namespace std;
 //void pra interface de interação com o user
 void show_menu(){
 
-    cout << "a. Cadastrar cidade; " << endl;
+    cout << "\nOla cacador de pokemons, o que gostaria de acessar? " << endl;
+    cout << "\na. Cadastrar cidade; " << endl;
     cout << "b. Cadastrar estrada; " << endl;
     cout << "c. Buscar centro pokemon; " << endl;
     cout << "d. Cadastrar pokemon; " << endl;
@@ -13,6 +14,7 @@ void show_menu(){
     cout << "g. Listar pokemon; " << endl; //por ordem alfabética de tipo
     cout << "h. Contar pokemons de cada tipo; " << endl; 
     cout << "i. Encontrar pokemons proximos; " << endl;
+    cout << "s. Encerrar pokedex; \n" << endl;
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -68,6 +70,7 @@ int main (){
         show_menu();
 
         cin >> opcoes;
+        cout << "\n";
 
         switch(opcoes){     //switch case pra seleção de opções du user
             case 'a':
