@@ -1,4 +1,7 @@
 #include <iostream>
+#include "cadastros.hpp"
+#include "pokedex.hpp"
+
 using namespace std;
 
 //void pra interface de interação com o user
@@ -16,48 +19,6 @@ void show_menu(){
     cout << "i. Encontrar pokemons proximos; " << endl;
     cout << "s. Encerrar pokedex; \n" << endl;
 }
-
-///////////////////////////////////////////////////////////////////////////
-/*==============funçoes para implementar as funcionalidades==============*/
-///////////////////////////////////////////////////////////////////////////
-
-void cadastrar_city()
-{
-    cout << "Funionalidade em construcao" << endl;
-}
-
-void cadastrar_road(){
-    cout << "Funionalidade em construcao" << endl;
-}
-
-void centro_poke(){
-    cout << "Funionalidade em construcao" << endl;
-}
-
-void cadastrar_poke(){
-    cout << "Funionalidade em construcao" << endl;
-}
-
-void remover_poke(){
-    cout << "Funionalidade em construcao" << endl;
-}
-
-void listar_poke_nome(){
-    cout << "Funionalidade em construcao" << endl;
-}
-
-void listar_poke_tipo(){
-    cout << "Funionalidade em construcao" << endl;
-}
-
-void contar_poke_tipo(){
-    cout << "Funionalidade em construcao" << endl;
-}
-
-void find_near_poke(){
-    cout << "Funionalidade em construcao" << endl;
-}
-
 
 int main (){
 
@@ -87,7 +48,7 @@ int main (){
 
             case 'c':
             {
-                centro_poke();
+                buscar_centro_poke();
                 break;
             }
 
@@ -135,8 +96,20 @@ int main (){
 
         }
 
-
     }
 
     return 0;
 }
+
+// ./pokedex pra rodar no powerShell aqui no VsCode já estando no
+//diretorio
+
+/*
+Mas pra rodar no CMD é necessário que voce vá para o diretorio 
+onde voce salvou o projeto com o comando:
+
+cd C:\Users\Gustavo\Documents\Codigos\Poked-xC04
+-------esse é o diretorio no meu caso.----------
+
+Estando no diretorio é so colocar pokedex.exe que vai rodar.
+*/
