@@ -13,6 +13,7 @@ struct town
     int codigo_cidade;
 };
 
+town cadastro[10]; // struct para cadastro de cidades
 // void pra interface de interação com o usuário
 void cadastrar_city()
 {
@@ -23,7 +24,7 @@ void cadastrar_city()
     {
         for (int j = 0; j < cidade; j++)
         {
-            grafo[i][j] = -1;
+            grafo[i][j] = 90;
         }
     }
     /*
@@ -72,13 +73,13 @@ void cadastrar_city()
     grafo[10][9] = 7;
     grafo[9][10] = 7;
 
-    town cadastro[10]; // struct para cadastro de cidades
 
     int i = 0;
-    for (i; i < 11; i++)
+    bool quero_cadastrar = 1;
+    while (quero_cadastrar)
     {
         cout << "Digite o nome da cidade: " << endl;
-        cin >> cadastro[i].nome;
+        getline(cin >> ws, cadastro[i].nome);
         cout << "\n";
 
         cout << "Digite o codigo da cidade: " << endl;
@@ -88,33 +89,41 @@ void cadastrar_city()
         cout << "Essa cidade tem um centro pokemon? (1 para sim e 0 para não)" << endl;
         cin >> cadastro[i].centro_poke;
         cout << "\n";
+
+        cout << "Gostaria de cadastrar uma nova cidade? (1 para sim 0 para não )" << endl;
+        cin >> quero_cadastrar;
+        cout << "\n";
     }
-    
-    
-    int distancia =-1;
+}
+
+void buscar_centro_poke()
+{
+
+
+    int distancia = 90;
     int posicao_centro = -1;
-    
-    for(j=0; j<11; j++){
-        if(grafo["centro"][j]!=-1){
-            if(grafo["centro"][j]<=distancia)
-            distancia = grafo["centro"][j];
-            posicao_centro = j;
+    int cod_cidade;
+
+    cout << "Digite o codigo da cidade: " << endl;
+    cin >> cod_cidade;
+
+    for (int j = 0; j < 11; j++)
+    {
+        if (grafo[j][cod_cidade] != -1)
+        {
+            if (grafo[j][cod_cidade] <= distancia)
+                distancia = grafo[j][cod_cidade];
+                posicao_centro = cod_cidade;
         }
     }
-    cout << "A cidade mais proxima do centro pokemon é: " << cadastro[posicao_centro].nome << " e a distancia é de: " << distancia << "km" << endl;
-    
+    cout << "A cidade mais proxima do centro pokemon e: " << cadastro[posicao_centro].nome << " e a distancia e de: " << distancia << "km" << endl;
 }
- 
 
 void cadastrar_road()
 {
     cout << "Funcionalidade em construcao" << endl;
 }
 
-void buscar_centro_poke()
-{
-    cout << "Funcionalidade em construcao" << endl;
-}
 
 void cadastrar_poke()
 {
