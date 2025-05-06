@@ -13,6 +13,14 @@ struct town
     int codigo_cidade;
 };
 
+struct pokemon
+{
+    string nome;
+    string tipo;
+    int codigo_poke; //numero
+    int codigo_cidade; //localização do pokemon
+};
+
 town cadastro[10]; // struct para cadastro de cidades
 // void pra interface de interação com o usuário
 void cadastrar_city()
@@ -28,17 +36,17 @@ void cadastrar_city()
         }
     }
     /*
-    cidade 1 = Indiro Plateau
-    cidade 2 = Viridian City
-    cidade 3 = pallet town
-    cidade 4 = cinnabar island
-    cidade 5 = fuschia city
-    cidade 6 = vermillion city
-    cidade 7 = lavender town
-    cidade 8 = saffron cty
-    cidade 9 = celadon city
-    cidade 10 = cerulean city
-    ciadade 11 = pewter city
+    cidade 0 = Indiro Plateau
+    cidade 1 = Viridian City
+    cidade 2 = pallet town
+    cidade 3 = cinnabar island
+    cidade 4 = fuschia city
+    cidade 5 = vermillion city
+    cidade 6 = lavender town
+    cidade 7 = saffron cty
+    cidade 8 = celadon city
+    cidade 9 = cerulean city
+    ciadade 10 = pewter city
 
     */
     // ponderando o grafo beleza
@@ -79,7 +87,7 @@ void cadastrar_city()
     while (quero_cadastrar)
     {
         cout << "Digite o nome da cidade: " << endl;
-        getline(cin >> ws, cadastro[i].nome);
+        getline(cin, cadastro[i].nome);
         cout << "\n";
 
         cout << "Digite o codigo da cidade: " << endl;
@@ -93,13 +101,12 @@ void cadastrar_city()
         cout << "Gostaria de cadastrar uma nova cidade? (1 para sim 0 para não )" << endl;
         cin >> quero_cadastrar;
         cout << "\n";
+        i++;
     }
 }
 
 void buscar_centro_poke()
 {
-
-
     int distancia = 90;
     int posicao_centro = -1;
     int cod_cidade;
@@ -111,9 +118,10 @@ void buscar_centro_poke()
     {
         if (grafo[j][cod_cidade] != -1)
         {
-            if (grafo[j][cod_cidade] <= distancia)
+            if (grafo[j][cod_cidade] <= distancia) {
                 distancia = grafo[j][cod_cidade];
                 posicao_centro = cod_cidade;
+            }
         }
     }
     cout << "A cidade mais proxima do centro pokemon e: " << cadastro[posicao_centro].nome << " e a distancia e de: " << distancia << "km" << endl;
