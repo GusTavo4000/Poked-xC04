@@ -28,17 +28,17 @@ void cadastrar_city()
         }
     }
     /*
-    cidade 1 = Indiro Plateau
-    cidade 2 = Viridian City
-    cidade 3 = pallet town
-    cidade 4 = cinnabar island
-    cidade 5 = fuschia city
-    cidade 6 = vermillion city
-    cidade 7 = lavender town
-    cidade 8 = saffron cty
-    cidade 9 = celadon city
-    cidade 10 = cerulean city
-    ciadade 11 = pewter city
+    cidade 0 = Indiro Plateau
+    cidade 1 = Viridian City
+    cidade 2 = pallet town
+    cidade 3 = cinnabar island
+    cidade 4 = fuschia city
+    cidade 5 = vermillion city
+    cidade 6 = lavender town
+    cidade 7 = saffron cty
+    cidade 8 = celadon city
+    cidade 9 = cerulean city
+    ciadade 10 = pewter city
 
     */
     // ponderando o grafo beleza
