@@ -18,7 +18,8 @@ struct pokemon
     string nome;
     string tipo;
     int codigo_poke; //numero
-    int codigo_cidade; //localização do pokemon
+    int loc_X; //localização do pokemon em X
+    int loc_Y; //localização do pokemon em Y
 };
 
 town cadastro[10]; // struct para cadastro de cidades
@@ -135,7 +136,37 @@ void cadastrar_road()
 
 void cadastrar_poke()
 {
-    cout << "Funcionalidade em construcao" << endl;
+    int i = 0;
+    bool quero_cadastrar = 1;
+    pokemon pokemon[10]; // struct para cadastro de pokemons
+
+    while (quero_cadastrar)
+    {
+        cin.ignore(); // Limpa o buffer de entrada
+        cout << "Digite o nome do Pokemon: " << endl;
+        getline(cin, pokemon[i].nome);
+        cout << "\n";
+
+        cout << "Digite o tipo: " << endl;
+        getline(cin,pokemon[i].tipo);
+        cout << "\n";
+
+        cout << "Digite o numero da pokedex do seu pokemon: " << endl;
+        cin >> pokemon[i].codigo_poke;
+        cout << "\n";
+
+        cout << "Digite a localização do pokemon (X, Y): " << endl;
+        cin >> pokemon[i].loc_X;
+        cout << "\n";
+        cin >> pokemon[i].loc_Y;
+        cout << "\n";
+
+        cout << "Gostaria de cadastrar um novo Pokemon? (1 para sim 0 para não )" << endl;
+        cin >> quero_cadastrar;
+        cin.ignore(); // Limpa o buffer de entrada
+        cout << "\n";
+        i++;
+    }
 }
 void remover_poke()
 {
