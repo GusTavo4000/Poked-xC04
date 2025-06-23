@@ -266,7 +266,29 @@ void contar_poke_tipo()
 
 void find_near_poke()
 {
-    cout << "Funcionalidade em construção\n";
+    if (total_pokemons == 0)
+    {
+        cout << "Nenhum Pokémon cadastrado.\n";
+        return;
+    }
+
+    float x, y;
+    cout << "Digite sua localização atual (X Y): ";
+    cin >> x >> y;
+
+    int contador = 0;
+    float raio_quadrado = 0.01; 
+
+    for (int i = 0; i < total_pokemons; i++)
+    {
+        float dx = pokedex[i].loc_X - x;
+        float dy = pokedex[i].loc_Y - y;
+        float distancia2 = dx * dx + dy * dy; 
+
+        if (distancia2 <= raio_quadrado)
+        {
+            contador++;
+        }
 }
 
 void show_menu()
